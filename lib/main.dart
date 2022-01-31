@@ -6,12 +6,30 @@ void main() {
 
 class MyHomePage extends StatefulWidget {
   @override
-  State<MyHomePage> createState() => studentDialogBoxState();
+  State<StatefulWidget> createState() => studentDialogBoxState();
 }
 
 class studentDialogBoxState extends State<MyHomePage> {
+  var studentName = "";
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("student app"),
+      ),
+      body: Column(
+        children: <Widget>[
+          TextField(
+            onChanged: (String nameToChange) {
+              setState(() {
+                studentName = nameToChange;
+              });
+            },
+          ),
+          Text("hoşgeldin" + studentName)
+        ],
+      ),
+    );
   }
 }
