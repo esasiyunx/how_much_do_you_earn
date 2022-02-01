@@ -1,6 +1,7 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'extensions/extension.dart';
 
 void main() => runApp(const MaterialApp(home: MyHomePage()));
@@ -44,7 +45,8 @@ class StudentDialogBoxState extends State<MyHomePage> {
                 //         ],
                 //       );
                 //     });
-                exShowErrorMessage(text: "kardeş hata verdi");
+                // exShowErrorMessage(text: "kardeş hata verdi");
+                //Get.to(page)
               },
             )
           ],
