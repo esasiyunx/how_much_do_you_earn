@@ -19,11 +19,11 @@ class StudentDialogBoxState extends State<MyHomePage> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("student app"),
+          title: Text("appBar Title"),
           actions: <Widget>[
             IconButton(
               icon: Icon(Icons.warning),
-              tooltip: "Get a Photo.",
+              tooltip: "Get an alarm.",
               onPressed: () {
                 showDialog(
                     context: context,
@@ -65,4 +65,3 @@ class StudentDialogBoxState extends State<MyHomePage> {
     );
   }
 }
-
