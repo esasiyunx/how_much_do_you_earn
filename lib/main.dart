@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'extensions/extension.dart';
 
-void main() => runApp(MyHomePage());
+void main() => runApp(MaterialApp(home: MyHomePage()));
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -15,22 +17,52 @@ class StudentDialogBoxState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Scaffold(
-      appBar: AppBar(
-        title: Text("student app"),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("student app"),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.warning),
+              tooltip: "Get a Photo.",
+              onPressed: () {
+                showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text("alert"),
+                        content: Text("test"),
+                        actions: <Widget>[
+                          TextButton(
+                            onPressed: () => Navigator.pop(context, 'OK'),
+                            child: const Text('OK'),
+                          ),
+                          TextButton(
+                            onPressed: () => Navigator.pop(context, 'Cancel'),
+                            child: const Text('Cancel'),
+                          ),
+                        ],
+                      );
+                    });
+                myShowErrorMessage("kardeş hata");
+              },
+            )
+          ],
+        ),
+        body: Column(
+          children: <Widget>[
+            TextField(
+              onChanged: (String nameToChange) {
+                setState(() {
+                  studentName = nameToChange;
+                });
+              },
+            ),
+            Text("welcome " + studentName)
+          ],
+        ),
       ),
-      body: Column(
-        children: <Widget>[
-          TextField(
-            onChanged: (String nameToChange) {
-              setState(() {
-                studentName = nameToChange;
-              });
-            },
-          ),
-          Text("hoşgeldin " + studentName)
-        ],
-      ),
-    ));
+      theme: ThemeData.light(),
+    );
   }
 }
+
