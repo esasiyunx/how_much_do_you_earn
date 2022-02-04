@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'extensions/extension.dart';
 
-void main() => runApp(const MaterialApp(home: MyHomePage()));
+void main() => runApp(const GetMaterialApp(home: MyHomePage()));
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -27,26 +27,19 @@ class StudentDialogBoxState extends State<MyHomePage> {
               icon: const Icon(Icons.warning),
               tooltip: "Get an alarm.",
               onPressed: () {
-                // showDialog(
-                //     context: context,
-                //     builder: (BuildContext context) {
-                //       return AlertDialog(
-                //         title: const Text("alert"),
-                //         content: const Text("test"),
-                //         actions: <Widget>[
-                //           TextButton(
-                //             onPressed: () => Navigator.pop(context, 'OK'),
-                //             child: const Text('OK'),
-                //           ),
-                //           TextButton(
-                //             onPressed: () => Navigator.pop(context, 'Cancel'),
-                //             child: const Text('Cancel'),
-                //           ),
-                //         ],
-                //       );
-                //     });
-                // exShowErrorMessage(text: "kardeş hata verdi");
-                //Get.to(page)
+                // exShowDialogMessage(
+                //   context: context,
+                //   text: "başlık",
+                //   content: "içerik",
+                // );
+                // exShowToastMessage(text: "kardeş hata verdi");
+                Get.defaultDialog(
+                    textConfirm: "Confirm",
+                    textCancel: "Cancel",
+                    title: "title",
+                    content: Text("asd"),
+                    backgroundColor: Colors.amber,
+                    middleText: "zxc");
               },
             )
           ],
