@@ -3,6 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'extensions/extension.dart';
+import 'extensions/routes.dart';
+import 'myfirstpage.dart';
 
 void main() => runApp(const GetMaterialApp(home: MyHomePage()));
 
@@ -18,7 +20,7 @@ class StudentDialogBoxState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: const Text("appBar Title"),
@@ -37,8 +39,8 @@ class StudentDialogBoxState extends State<MyHomePage> {
                     textConfirm: "Confirm",
                     textCancel: "Cancel",
                     title: "title",
-                    content: Text("asd"),
-                    backgroundColor: Colors.amber,
+                    content: const Text("asd"),
+                    backgroundColor: Colors.blueGrey,
                     middleText: "zxc");
               },
             )
