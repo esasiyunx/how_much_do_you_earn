@@ -2,9 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'extensions/extension.dart';
-import 'extensions/routes.dart';
-import 'myfirstpage.dart';
 
 void main() => runApp(const GetMaterialApp(home: MyHomePage()));
 
