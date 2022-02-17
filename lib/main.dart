@@ -1,9 +1,16 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-void main() => runApp(const GetMaterialApp(home: MyHomePage()));
+void main() {
+  //appbarın üstündeki saatin olduğu kısmı transparan yapmayı sağlıyor.
+  SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
+
+  runApp(const GetMaterialApp(home: MyHomePage()));
+}
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -17,7 +24,7 @@ class StudentDialogBoxState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
           title: const Text("appBar Title"),
